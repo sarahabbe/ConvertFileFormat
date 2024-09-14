@@ -117,7 +117,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Sarah Abbett - 09-10-24 - 2.2.2&#xA;&#xA;This automation allows you to convert a file into other commonly used file types.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;UiPath.Form.Activities = 2.0.2&#xA;UiPath.System.Activities = 22.10.8&#xA;UiPath.UIAutomation.Activities = 22.10.9&#xA;UiPath.WebAPI.Activities = 1.13.3&#xA;UiPath.IPC.Activities = 1.2.0&#xA;UiPath.Excel.Activities = 2.20.3&#xA;UiPath.PDF.Activities = 3.16.0&#xA;UiPath.Word.Activities = 1.13.2" DisplayName="Main process" sap:VirtualizedContainerService.HintSize="732.8,1103.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+      <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Sarah Abbett - 09-10-24 - 2.2.2&#xA;&#xA;This automation allows you to convert a file into other commonly used file types.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;UiPath.Form.Activities = 2.0.2&#xA;UiPath.System.Activities = 22.10.8&#xA;UiPath.UIAutomation.Activities = 22.10.9&#xA;UiPath.WebAPI.Activities = 1.13.3&#xA;UiPath.IPC.Activities = 1.2.0&#xA;UiPath.Excel.Activities = 2.20.3&#xA;UiPath.PDF.Activities = 3.16.0&#xA;UiPath.Word.Activities = 1.13.2" DisplayName="Main process" sap:VirtualizedContainerService.HintSize="692.8,1103.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -305,7 +305,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <Transition.Condition>[SystemException is Nothing]</Transition.Condition>
               <Transition.To>
-                <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Displays User Input Form to the user and executes processes." DisplayName="User Input Form and Process" sap:VirtualizedContainerService.HintSize="595.2,2605.6" sap2010:WorkflowViewState.IdRef="State_4">
+                <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Displays User Input Form to the user and executes processes." DisplayName="User Input Form and Process" sap:VirtualizedContainerService.HintSize="422.4,104.8" sap2010:WorkflowViewState.IdRef="State_4">
                   <State.Entry>
                     <TryCatch DisplayName="Try displaying User Inputs Form and executing processes" sap:VirtualizedContainerService.HintSize="550.4,2104" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                       <sap:WorkflowViewStateService.ViewState>
@@ -455,7 +455,7 @@
                       </Transition.Action>
                       <Transition.Condition>[Convert.ToBoolean(dict_Config("formCanceled"))]</Transition.Condition>
                     </Transition>
-                    <Transition sap2010:Annotation.AnnotationText="A Submit button was pressed and the button's process was successfully executed. We display the Config's FinalFormMessage to the user and provide them the option to repeat the automation." DisplayName="Success" sap:VirtualizedContainerService.HintSize="534,583" sap2010:WorkflowViewState.IdRef="Transition_9">
+                    <Transition sap2010:Annotation.AnnotationText="A Submit button was pressed and the button's process was successfully executed. We display the Config's FinalFormMessage to the user and provide them the option to repeat the automation." DisplayName="Success" sap:VirtualizedContainerService.HintSize="530.4,572" sap2010:WorkflowViewState.IdRef="Transition_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:PointCollection x:Key="ConnectorLocation">263.34000000000003,422.8 263.34000000000003,452.80000000000007 263.68,452.80000000000007 263.68,514.5</av:PointCollection>
@@ -759,7 +759,7 @@
                         </State>
                       </Transition.To>
                       <Transition.Action>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_43">
@@ -957,18 +957,6 @@
                         </Sequence>
                       </Transition.Action>
                       <Transition.Condition>[BusinessException IsNot Nothing]</Transition.Condition>
-                    </Transition>
-                    <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_16">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:PointCollection x:Key="ConnectorLocation">390.06,422.8 390.06,452.8 347.82,452.8 347.82,422.8</av:PointCollection>
-                          <x:Int32 x:Key="SrcConnectionPointIndex">51</x:Int32>
-                          <x:Int32 x:Key="DestConnectionPointIndex">43</x:Int32>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Transition.To>
-                        <x:Reference>__ReferenceID1</x:Reference>
-                      </Transition.To>
                     </Transition>
                   </State.Transitions>
                 </State>

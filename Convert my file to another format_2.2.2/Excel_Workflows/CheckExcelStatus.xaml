@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1151.2,1744</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151.2,1687.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>testing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -94,7 +94,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="testing" sap:VirtualizedContainerService.HintSize="747.2,1679.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="testing" sap:VirtualizedContainerService.HintSize="747.2,1622.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="processList" />
       <Variable x:TypeArguments="sco:Collection(sd:Process)" Name="filteredList" />
@@ -105,21 +105,21 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetProcesses ContinueOnError="{x:Null}" DisplayName="Get Processes" sap:VirtualizedContainerService.HintSize="704,56.8" sap2010:WorkflowViewState.IdRef="GetProcesses_1" Processes="[processList]" />
-    <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" DisplayName="For Each Process - check for Excel open" sap:VirtualizedContainerService.HintSize="704,1556" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[processList]">
+    <ui:ForEach x:TypeArguments="sd:Process" CurrentIndex="{x:Null}" DisplayName="For Each Process - check for Excel open" sap:VirtualizedContainerService.HintSize="704,1499.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[processList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:Process">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:Process" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="668.8,1407.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="668.8,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[currentItem.ProcessName.ToUpper = &quot;EXCEL&quot;]" DisplayName="If Excel is open" sap:VirtualizedContainerService.HintSize="625.6,1340.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[currentItem.ProcessName.ToUpper = &quot;EXCEL&quot;]" DisplayName="If Excel is open" sap:VirtualizedContainerService.HintSize="625.6,1284" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1074.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1017.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="result" />
                   </Sequence.Variables>
@@ -133,7 +133,7 @@
                       <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
                     </ui:InputDialog.Result>
                   </ui:InputDialog>
-                  <If Condition="[result = &quot;Continue&quot;]" DisplayName="If user selects to continue" sap:VirtualizedContainerService.HintSize="529.6,658.4" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[result = &quot;Continue&quot;]" DisplayName="If user selects to continue" sap:VirtualizedContainerService.HintSize="529.6,601.6" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,246.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
@@ -145,13 +145,13 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else - user selects to stop process" sap:VirtualizedContainerService.HintSize="496,250.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Else - user selects to stop process" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Set cancel flag as true" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign DisplayName="Set cancel flag as true" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Object">[io_dict_Config("formCanceled")]</OutArgument>
                           </Assign.To>
@@ -159,7 +159,6 @@
                             <InArgument x:TypeArguments="x:Object">[True]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:Break sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="Break_1" />
                       </Sequence>
                     </If.Else>
                   </If>
