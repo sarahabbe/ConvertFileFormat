@@ -1,0 +1,504 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DisplayForm" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uia="clr-namespace:UiPath.IPC.Activities;assembly=UiPath.IPC.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_dict_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1151.2,3642.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DisplayForm_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="92">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.Json</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Model</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
+      <x:String>UiPath.IPC.Activities</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="82">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IPC.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow displays the User Inputs Form. &#xA;&#xA;The form has all its components inside a single Container component. &#xA;We pass our Config dictionary (via an object) to the Container component so that the form can be populated with the Config dictionary values and vice versa.&#xA;&#xA;Based on the button pressed in the form, the automation will execute the process associated with that button and either 1) return execution to the form (Click button) or 2) proceed to the Results Form state (Submit button)." DisplayName="DisplayForm" sap:VirtualizedContainerService.HintSize="772.8,3577.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_selectedButton" />
+      <Variable x:TypeArguments="x:Object" Name="obj_container" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="list_excelSheets" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="Pass config dictionary into object variable to pass in/out of form Container" sap:VirtualizedContainerService.HintSize="729.6,157.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Object">[obj_container]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Object">[io_dict_Config]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="b774a24c-432c-42e9-a62a-90d64cfef72b" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="True" DisplayName="Create Form" EnableAccessibility="False" FormHeight="780" FormSchema="%[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;{{data.logF_BusinessProcessName}}&quot;,&quot;key&quot;:&quot;logF_BusinessProcessName&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;{{data.automationDescription}}&quot;,&quot;key&quot;:&quot;automationDescription&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Container&quot;,&quot;key&quot;:&quot;container&quot;,&quot;type&quot;:&quot;container&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;key&quot;:&quot;table3&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:18,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;label&quot;:&quot;View demo&quot;,&quot;action&quot;:&quot;custom&quot;,&quot;theme&quot;:&quot;secondary&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;viewDemo&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;isResetData&quot;:false,&quot;showUpdateData&quot;:false,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;allowMultipleClicksWhileDoBlock&quot;:false,&quot;hideOnChildrenHidden&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;View user guide&quot;,&quot;action&quot;:&quot;custom&quot;,&quot;theme&quot;:&quot;secondary&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;viewUserGuide&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false,&quot;showUpdateData&quot;:false,&quot;allowMultipleClicksWhileDoBlock&quot;:false,&quot;hideOnChildrenHidden&quot;:false}]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]]},{&quot;tag&quot;:&quot;h4&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Accepted file formats and available conversions&quot;,&quot;key&quot;:&quot;label1&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;left&quot;,&quot;bordered&quot;:true,&quot;condensed&quot;:true,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;&lt;p style=\&quot;text-align:center\&quot;&gt;&lt;b&gt;docx, pdf, png, jpg, jpeg&lt;/b&gt;&lt;/p&gt;\n&lt;ul&gt;\n  &lt;li&gt;Word to PDF&lt;/li&gt;\n  &lt;li&gt;PDF to image&lt;/li&gt;\n  &lt;li&gt;PDF to Word&lt;/li&gt;\n  &lt;li&gt;Image to PDF&lt;/li&gt;\n  &lt;li&gt;Image to Word&lt;/li&gt;\n&lt;/ul&gt;&quot;,&quot;key&quot;:&quot;label&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]},{&quot;components&quot;:[{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;&lt;p style=\&quot;text-align:center\&quot;&gt;&lt;b&gt;xlsx, csv&lt;/b&gt;&lt;/p&gt;\n&lt;ul&gt;\n  &lt;li&gt;Excel to CSV&lt;/li&gt;\n  &lt;li&gt;Excel to PDF&lt;/li&gt;\n  &lt;li&gt;CSV to Excel&lt;/li&gt;\n  &lt;li&gt;CSV to JSON&lt;/li&gt;\n  &lt;li&gt;CSV to XML&lt;/li&gt;\n&lt;/ul&gt;&quot;,&quot;key&quot;:&quot;label2&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]},{&quot;components&quot;:[{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;&lt;p style=\&quot;text-align:center\&quot;&gt;&lt;b&gt;json, xml&lt;/b&gt;&lt;/p&gt;\n&lt;ul&gt;\n  &lt;li&gt;JSON to CSV (JSON array only)&lt;/li&gt;\n  &lt;li&gt;JSON to XML (JSON array not allowed)&lt;/li&gt;\n  &lt;li&gt;XML to JSON&lt;/li&gt;\n&lt;/ul&gt;&quot;,&quot;key&quot;:&quot;label3&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;}]}]]},{&quot;label&quot;:&quot;Original file&quot;,&quot;customClass&quot;:&quot;filePath&quot;,&quot;showAllFileTypes&quot;:false,&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;originalFilePath&quot;,&quot;filePathExtension&quot;:[{&quot;displayName&quot;:&quot;Valid Files&quot;,&quot;value&quot;:&quot;*.docx;*.jpg;*.jpeg;*.png;*.csv;*.json;*.xml;*.pdf;*.xlsx&quot;}],&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;,&quot;tooltip&quot;:&quot;Select the file you'd like to convert&quot;,&quot;keyModified&quot;:true,&quot;calculateValue&quot;:&quot;const updateOnChange = instance.updateOnChange;\r\n    instance.updateOnChange = function(flags, changed) {\r\n          if (flags.modified) {\r\n           instance.emit('execute', instance.component.key , {});\r\n          }\r\n}&quot;},{&quot;label&quot;:&quot;Action&quot;,&quot;key&quot;:&quot;Action&quot;,&quot;type&quot;:&quot;hidden&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false},{&quot;title&quot;:&quot;Image conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;imagePanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;imagePanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Image conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;Image to PDF&quot;,&quot;value&quot;:&quot;imageToPdf&quot;},{&quot;label&quot;:&quot;Image to Word&quot;,&quot;value&quot;:&quot;imageToWord&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_imageType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;Word document conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;wordPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;wordPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Word conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;Word to PDF&quot;,&quot;value&quot;:&quot;wordToPdf&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_wordType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;PDF conversion&quot;,&quot;tooltip&quot;:&quot;Native PDFs only. The PDF to image conversion will create a separate image file for each page of the PDF&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;pdfPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;pdfPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;PDF conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;PDF to Word&quot;,&quot;value&quot;:&quot;pdfToWord&quot;},{&quot;label&quot;:&quot;PDF to Image&quot;,&quot;value&quot;:&quot;pdfToImage&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_pdfType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;indexeddb&quot;:{&quot;filter&quot;:{}},&quot;input&quot;:true}]},{&quot;title&quot;:&quot;Excel conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;excelPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;excelPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Excel conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;Excel to CSV&quot;,&quot;value&quot;:&quot;excelToCsv&quot;},{&quot;label&quot;:&quot;Excel to PDF&quot;,&quot;value&quot;:&quot;excelToPdf&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_excelType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Excel sheet&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tooltip&quot;:&quot;Please select the Excel sheet you'd like to convert&quot;,&quot;tableView&quot;:true,&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;str_excelSheet_Name&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.str_excelType_Conversion&quot;,&quot;eq&quot;:&quot;excelToCsv&quot;},&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;CSV conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;csvPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;csvPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;CSV conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;CSV to Excel&quot;,&quot;value&quot;:&quot;csvToExcel&quot;},{&quot;label&quot;:&quot;CSV to JSON&quot;,&quot;value&quot;:&quot;csvToJson&quot;},{&quot;label&quot;:&quot;CSV to XML&quot;,&quot;value&quot;:&quot;csvToXml&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_csvType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;JSON conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;jsonPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;jsonPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;JSON conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;JSON to CSV&quot;,&quot;value&quot;:&quot;jsonToCsv&quot;},{&quot;label&quot;:&quot;JSON to XML&quot;,&quot;value&quot;:&quot;jsonToXml&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_jsonType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;XML conversion&quot;,&quot;collapsible&quot;:false,&quot;key&quot;:&quot;xmlPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:true,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;xmlPanel&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;XML conversion&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Convert to&quot;,&quot;widget&quot;:&quot;choicesjs&quot;,&quot;tableView&quot;:true,&quot;data&quot;:{&quot;values&quot;:[{&quot;label&quot;:&quot;XML to JSON&quot;,&quot;value&quot;:&quot;xmlToJson&quot;}]},&quot;validate&quot;:{&quot;required&quot;:true,&quot;onlyAvailableItems&quot;:true},&quot;key&quot;:&quot;str_xmlType_Conversion&quot;,&quot;type&quot;:&quot;select&quot;,&quot;input&quot;:true}]},{&quot;title&quot;:&quot;outputPanel&quot;,&quot;collapsible&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;outputPanel&quot;,&quot;conditional&quot;:{&quot;show&quot;:false,&quot;when&quot;:&quot;container.Action&quot;,&quot;eq&quot;:&quot;initial&quot;},&quot;type&quot;:&quot;panel&quot;,&quot;label&quot;:&quot;Panel&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Output folder&quot;,&quot;customClass&quot;:&quot;folderPath&quot;,&quot;showAllFileTypes&quot;:true,&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;outputFolderPath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Filename&quot;,&quot;tooltip&quot;:&quot;Filename for newly converted file&quot;,&quot;tableView&quot;:true,&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;newFilename&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;right&quot;,&quot;key&quot;:&quot;table1&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;numCols&quot;:18,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Cancel&quot;,&quot;action&quot;:&quot;custom&quot;,&quot;theme&quot;:&quot;secondary&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;cancel&quot;,&quot;properties&quot;:{&quot;closeOnSubmit&quot;:&quot;True&quot;},&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;isResetData&quot;:false,&quot;showUpdateData&quot;:false,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;hideOnChildrenHidden&quot;:false,&quot;allowMultipleClicksWhileDoBlock&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Continue&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;continue&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;isResetData&quot;:false,&quot;saveOnEnter&quot;:false,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}]}]]}]}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="UiPath Ready-to-go Automation" FormWidth="1014" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="729.6,2719.2" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[str_selectedButton]" StartAsMinimized="False">
+      <ufa:FormActivity.Body>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Sequence sap:VirtualizedContainerService.HintSize="692.8,2560.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap2010:Annotation.AnnotationText="Once the user completes the form and presses a button, update the Config dictionary with new information from the Container. We have to append info to the Config dictionary instead of overwriting it because if you hid previous components, those field keys may be erased from the Config." DisplayName="Update Config with new info from Form" sap:VirtualizedContainerService.HintSize="649.6,519.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dict_objContainer" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:DeserializeJson x:TypeArguments="scg:Dictionary(x:String, x:Object)" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="468.8,92" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[dict_objContainer]" JsonString="[jsonconvert.SerializeObject(obj_container)]" />
+              <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="468.8,230.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dict_objContainer]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, x:Object)">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="scg:KeyValuePair(x:String, x:Object)" Name="pair" />
+                    </ActivityAction.Argument>
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_16">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[io_dict_Config(pair.Key)]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[pair.Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+            <Assign DisplayName="Assign - Add button pressed to Config" sap:VirtualizedContainerService.HintSize="649.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[io_dict_Config("selectedButton")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[str_selectedButton]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[str_selectedButton]" sap:VirtualizedContainerService.HintSize="649.6,1696.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <If Condition="[Convert.ToBoolean(io_dict_Config(&quot;pip&quot;))]" sap:VirtualizedContainerService.HintSize="713,270" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Switch workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" TargetSession="Child" UnSafe="True" WorkflowFileName="FormButtonAction.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">[io_dict_Config]</InOutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </If.Then>
+                  <If.Else>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Switch workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="FormButtonAction.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">[io_dict_Config]</InOutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </If.Else>
+                </If>
+              </Switch.Default>
+              <Sequence x:Key="cancel" DisplayName="Close form if selected button is Cancel" sap:VirtualizedContainerService.HintSize="476.8,345.6" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Set cancel flag as true" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("formCanceled")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;User pressed Cancel button&quot;]" />
+              </Sequence>
+              <TryCatch x:Key="viewUserGuide" sap2010:Annotation.AnnotationText="Attempts to open user guide PDF" sap:VirtualizedContainerService.HintSize="436.8,350.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[io_dict_Config(&quot;userGuideUrl&quot;).ToString]" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_3" Message="[io_dict_Config(&quot;userGuideUrl&quot;).ToString]" PollingInterval="10" Timeout="0" />
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <TryCatch x:Key="viewDemo" sap2010:Annotation.AnnotationText="Attempts to open demo video" sap:VirtualizedContainerService.HintSize="436.8,350.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[io_dict_Config(&quot;demoVideoUrl&quot;).ToString]" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_4" Message="[io_dict_Config(&quot;demoVideoUrl&quot;).ToString]" PollingInterval="10" Timeout="0" />
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <Switch x:TypeArguments="x:String" x:Key="originalFilePath" DisplayName="Switch&lt;String&gt;" Expression="[path.GetExtension(io_dict_Config(&quot;originalFilePath&quot;).ToString).ToLower]" sap:VirtualizedContainerService.HintSize="609.6,1407.2" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                <Assign x:Key=".docx" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["wordPanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".pdf" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["pdfPanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".png" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_19">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["imagePanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".jpg" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_20">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["imagePanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".jpeg" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_21">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["imagePanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Sequence x:Key=".xlsx" sap:VirtualizedContainerService.HintSize="569.6,1033.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel_Workflows\CheckExcelStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526.4,145.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel_Workflows\CheckExcelStatus.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="526.4,632" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+                    <ueab:ExcelProcessScopeX.Body>
+                      <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="492.8,473.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="449.6,407.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[io_dict_Config(&quot;originalFilePath&quot;).ToString]">
+                            <ueab:ExcelApplicationCard.Body>
+                              <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,114.4" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="372.8,48" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_2" Sheets="[list_excelSheets]" />
+                                </Sequence>
+                              </ActivityAction>
+                            </ueab:ExcelApplicationCard.Body>
+                          </ueab:ExcelApplicationCard>
+                        </Sequence>
+                      </ActivityAction>
+                    </ueab:ExcelProcessScopeX.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ueab:ExcelProcessScopeX>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="526.4,84.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476.8,224" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" ReadOnly="True" Visible="False" WorkbookPath="[io_dict_Config(&quot;originalFilePath&quot;).ToString]">
+                          <ui:ExcelApplicationScope.Body>
+                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                              </ActivityAction.Argument>
+                              <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="334.4,24.8" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[list_excelSheets]" />
+                            </ActivityAction>
+                          </ui:ExcelApplicationScope.Body>
+                        </ui:ExcelApplicationScope>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <Assign sap:VirtualizedContainerService.HintSize="526.4,104.8" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">["excelPanel"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+                <Assign x:Key=".csv" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_23">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["csvPanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".json" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_24">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["jsonPanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign x:Key=".xml" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_25">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[io_dict_Config("Action")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">["xmlPanel"]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Switch>
+            </Switch>
+            <Assign sap2010:Annotation.AnnotationText="After execution control is returned from the button's process, update the Container component with information from the Config dictionary so the form can be updated with new information." sap:VirtualizedContainerService.HintSize="649.6,164.8" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[obj_container]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[io_dict_Config]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ufa:FormActivity.Body>
+      <ufa:FormActivity.DelayBody>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </ActivityAction>
+      </ufa:FormActivity.DelayBody>
+      <ufa:FormActivity.FormFieldsCollection>
+        <InOutArgument x:TypeArguments="x:Object" x:Key="container">[obj_container]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="logF_BusinessProcessName">[io_dict_Config("logF_BusinessProcessName").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="automationDescription">[io_dict_Config("automationDescription").ToString]</InArgument>
+        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="str_excelSheet_Name_dropdown">[list_excelSheets]</InOutArgument>
+      </ufa:FormActivity.FormFieldsCollection>
+    </ufa:FormActivity>
+    <If Condition="[str_selectedButton is Nothing]" DisplayName="If user closes Form by pressing the X button" sap:VirtualizedContainerService.HintSize="729.6,634.4" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Set cancel flag" sap:VirtualizedContainerService.HintSize="496,368" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;User closed Form by pressing 'X'&quot;]" />
+          <Assign DisplayName="Set cancel flag as true" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[io_dict_Config("formCanceled")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Object">[True]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
