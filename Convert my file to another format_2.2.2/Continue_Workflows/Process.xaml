@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1151.2,1935.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151.2,2103.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow contains the logic of the button's process." DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,1870.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow contains the logic of the button's process." DisplayName="Process" sap:VirtualizedContainerService.HintSize="635.2,2038.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,21 +112,21 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="592,166.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_1" Message="Process running" PollingInterval="10" Timeout="0" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[system.io.path.GetExtension(io_dict_Config(&quot;originalFilePath&quot;).ToString).ToLower]" sap:VirtualizedContainerService.HintSize="592,1056" sap2010:WorkflowViewState.IdRef="Switch`1_10">
-      <Switch x:TypeArguments="x:String" x:Key=".docx" DisplayName="Word conversion" Expression="[io_dict_Config(&quot;str_wordType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,650.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[system.io.path.GetExtension(io_dict_Config(&quot;originalFilePath&quot;).ToString).ToLower]" sap:VirtualizedContainerService.HintSize="592,1224" sap2010:WorkflowViewState.IdRef="Switch`1_10">
+      <Switch x:TypeArguments="x:String" x:Key=".docx" DisplayName="Word conversion" Expression="[io_dict_Config(&quot;str_wordType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="534.4,818.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence x:Key="wordToPdf" sap:VirtualizedContainerService.HintSize="476.8,462.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence x:Key="wordToPdf" sap:VirtualizedContainerService.HintSize="494.4,630.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - new file extension" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign - new file extension" sap:VirtualizedContainerService.HintSize="451.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Object">[io_dict_Config("extension")]</OutArgument>
             </Assign.To>
@@ -134,21 +134,30 @@
               <InArgument x:TypeArguments="x:Object">[".pdf"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OverwriteCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,145.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="OverwriteCheck.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">
-                <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="io_dict_Config" />
-              </InOutArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Word_To_PDF workflow" sap:VirtualizedContainerService.HintSize="433.6,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Word_Workflows\Word_to_PDF.xaml">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,313.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,203.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OverwriteCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="372.8,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="OverwriteCheck.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">[io_dict_Config]</InOutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Word_To_PDF workflow" sap:VirtualizedContainerService.HintSize="451.2,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Word_Workflows\Word_to_PDF.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">[io_dict_Config]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".pdf" DisplayName="PDF conversion" Expression="[io_dict_Config(&quot;str_pdfType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,528" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch x:TypeArguments="x:String" x:Key=".pdf" DisplayName="PDF conversion" Expression="[io_dict_Config(&quot;str_pdfType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,157.6" sap2010:WorkflowViewState.IdRef="Switch`1_2">
         <Sequence x:Key="pdfToWord" sap:VirtualizedContainerService.HintSize="476.8,316.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -190,7 +199,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".png" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,528" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+      <Switch x:TypeArguments="x:String" x:Key=".png" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,157.6" sap2010:WorkflowViewState.IdRef="Switch`1_3">
         <Sequence x:Key="imageToPdf" sap:VirtualizedContainerService.HintSize="476.8,316.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -232,7 +241,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".jpg" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,528" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+      <Switch x:TypeArguments="x:String" x:Key=".jpg" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,157.6" sap2010:WorkflowViewState.IdRef="Switch`1_4">
         <Sequence x:Key="imageToPdf" sap:VirtualizedContainerService.HintSize="476.8,316.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -274,7 +283,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".jpeg" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,528" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+      <Switch x:TypeArguments="x:String" x:Key=".jpeg" DisplayName="image conversion" Expression="[io_dict_Config(&quot;str_imageType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,157.6" sap2010:WorkflowViewState.IdRef="Switch`1_5">
         <Sequence x:Key="imageToPdf" sap:VirtualizedContainerService.HintSize="476.8,316.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -316,7 +325,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".xlsx" DisplayName="Excel conversion" Expression="[io_dict_Config(&quot;str_excelType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,528" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+      <Switch x:TypeArguments="x:String" x:Key=".xlsx" DisplayName="Excel conversion" Expression="[io_dict_Config(&quot;str_excelType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,164.8" sap2010:WorkflowViewState.IdRef="Switch`1_6">
         <Sequence x:Key="excelToCsv" sap:VirtualizedContainerService.HintSize="476.8,316.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -358,7 +367,7 @@
           </ui:InvokeWorkflowFile>
         </Sequence>
       </Switch>
-      <Switch x:TypeArguments="x:String" x:Key=".csv" DisplayName="csv conversion" Expression="[io_dict_Config(&quot;str_csvType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="516.8,551.2" sap2010:WorkflowViewState.IdRef="Switch`1_7">
+      <Switch x:TypeArguments="x:String" x:Key=".csv" DisplayName="csv conversion" Expression="[io_dict_Config(&quot;str_csvType_Conversion&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496.8,177.6" sap2010:WorkflowViewState.IdRef="Switch`1_7">
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="csvToExcel" DisplayName="Invoke CSV_To_Excel workflow" sap:VirtualizedContainerService.HintSize="345.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Csv_Workflows\CSV_to_Excel.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dict_Config">[io_dict_Config]</InOutArgument>

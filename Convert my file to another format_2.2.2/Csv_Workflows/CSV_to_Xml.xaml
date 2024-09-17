@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1151.2,3150.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151.2,3184.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CSV_To_Excel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -121,7 +121,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="CSV_To_xml" sap:VirtualizedContainerService.HintSize="723.2,3085.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="CSV_To_xml" sap:VirtualizedContainerService.HintSize="667.2,3120" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="sx:XmlWriter" Name="writer" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_csv" />
@@ -133,28 +133,28 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_2" Message="Converting CSV to Xml" PollingInterval="10" Timeout="0" />
-    <ui:ReadCsvFile DataTable="[dt_csv]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="680,187.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-    <Assign sap:VirtualizedContainerService.HintSize="680,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_2" Message="Converting CSV to Xml" PollingInterval="10" Timeout="0" />
+    <ui:ReadCsvFile DataTable="[dt_csv]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="624,187.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+    <Assign sap:VirtualizedContainerService.HintSize="624,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="sx:XmlWriter">[writer]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sx:XmlWriter">[XmlWriter.Create(io_dict_Config("outputFolderPath").ToString + "\" + io_dict_Config("newFilename").ToString+ ".Xml")]</InArgument>
+        <InArgument x:TypeArguments="sx:XmlWriter">[XmlWriter.Create(io_dict_Config("outputFolderPath").ToString + "\" + io_dict_Config("newFilename").ToString + "-" + DateTime.Now.ToString("dd-MM-yy mm") + ".Xml")]</InArgument>
       </Assign.Value>
     </Assign>
-    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_16" MethodName="WriteStartDocument">
+    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_16" MethodName="WriteStartDocument">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sx:XmlWriter">[writer]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_17" MethodName="WriteStartElement">
+    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_17" MethodName="WriteStartElement">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sx:XmlWriter">[writer]</InArgument>
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="x:String">DataSet</InArgument>
     </InvokeMethod>
-    <Assign sap:VirtualizedContainerService.HintSize="680,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign sap:VirtualizedContainerService.HintSize="624,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
       </Assign.To>
@@ -162,7 +162,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="680,1536" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[dt_csv.Rows]">
+    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="624,1536" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[dt_csv.Rows]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -252,22 +252,22 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_21" MethodName="WriteEndElement">
+    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_21" MethodName="WriteEndElement">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sx:XmlWriter">[writer]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_22" MethodName="WriteEndDocument">
+    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_22" MethodName="WriteEndDocument">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sx:XmlWriter">[writer]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="680,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_23" MethodName="Close">
+    <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="624,166.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_23" MethodName="Close">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sx:XmlWriter">[writer]</InArgument>
       </InvokeMethod.TargetObject>
     </InvokeMethod>
-    <Assign sap:VirtualizedContainerService.HintSize="680,70" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign sap:VirtualizedContainerService.HintSize="624,104.8" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
       </Assign.To>

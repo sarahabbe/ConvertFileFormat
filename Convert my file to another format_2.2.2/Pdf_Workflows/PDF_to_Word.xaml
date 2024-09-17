@@ -146,7 +146,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:WordSaveAs DisplayName="Save Document As" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString]" sap:VirtualizedContainerService.HintSize="433.6,192.8" sap2010:WorkflowViewState.IdRef="WordSaveAs_1" />
+            <p:WordSaveAs DisplayName="Save Document As" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yy mm&quot;)]" sap:VirtualizedContainerService.HintSize="433.6,192.8" sap2010:WorkflowViewState.IdRef="WordSaveAs_1" />
           </Sequence>
         </ActivityAction>
       </p:WordApplicationScope.Body>

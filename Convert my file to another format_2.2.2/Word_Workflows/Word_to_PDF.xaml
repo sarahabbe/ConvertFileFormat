@@ -45,6 +45,7 @@
       <x:String>UiPath.Word.Activities</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,6 +95,17 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -101,7 +113,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Word_To_PDF" sap:VirtualizedContainerService.HintSize="510.4,589.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Word_To_PDF" sap:VirtualizedContainerService.HintSize="510.4,764.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,13 +121,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="467.2,166.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_2" Message="Converting Word to PDF" PollingInterval="10" Timeout="0" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + DateTime.Now.ToString(&quot;dd-MM-yy HH:mm:ss&quot;) + &quot;.pdf&quot;]" />
     <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="467.2,252.8" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
           </ActivityAction.Argument>
-          <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="433.6,111.2" sap2010:WorkflowViewState.IdRef="WordExportToPdf_3" />
+          <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yy mm&quot;) + &quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="433.6,111.2" sap2010:WorkflowViewState.IdRef="WordExportToPdf_3" />
         </ActivityAction>
       </p:WordApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
@@ -125,7 +138,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:WordApplicationScope>
-    <Assign sap:VirtualizedContainerService.HintSize="467.2,104" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="467.2,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
       </Assign.To>

@@ -186,7 +186,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:WriteCsvFile AddHeaders="True" DataTable="[dt_excel]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString +&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="596.8,187.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_2" ShouldQuote="True" />
+    <ui:WriteCsvFile AddHeaders="True" DataTable="[dt_excel]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot;+ io_dict_Config(&quot;newFilename&quot;).ToString + &quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yy mm&quot;) +&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="596.8,187.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_2" ShouldQuote="True" />
     <Assign sap:VirtualizedContainerService.HintSize="596.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>

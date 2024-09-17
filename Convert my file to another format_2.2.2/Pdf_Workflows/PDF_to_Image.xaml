@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2678,1370</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151.2,1490.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PDF_To_Image_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -43,6 +43,10 @@
       <x:String>UiPath.PDF.Activities</x:String>
       <x:String>UiPath.PDF.Activities.PDF</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,6 +97,18 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -100,7 +116,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="PDF_To_Image" sap:VirtualizedContainerService.HintSize="877,1305" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="PDF_To_Image" sap:VirtualizedContainerService.HintSize="588.8,1425.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="int_count" />
       <Variable x:TypeArguments="x:Int32" Name="int_pageCount" />
@@ -110,9 +126,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="815,142" sap2010:WorkflowViewState.IdRef="BroadcastMessage_2" Message="Converting PDF to Image" PollingInterval="10" Timeout="0" />
-    <upap:GetPDFPageCount DisplayName="Get PDF Page Count- " FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="815,69" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_2" PageCount="[int_pageCount]" />
-    <Assign DisplayName="Assign-icount init" sap:VirtualizedContainerService.HintSize="815,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <uia:BroadcastMessage ContinueOnError="{x:Null}" Channel="[io_dict_Config(&quot;statusWindowChannel&quot;).ToString]" DisplayName="Broadcast Message" sap:VirtualizedContainerService.HintSize="545.6,166.4" sap2010:WorkflowViewState.IdRef="BroadcastMessage_2" Message="Converting PDF to Image" PollingInterval="10" Timeout="0" />
+    <upap:GetPDFPageCount DisplayName="Get PDF Page Count- " FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="545.6,115.2" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_2" PageCount="[int_pageCount]" />
+    <Assign DisplayName="Assign-icount init" sap:VirtualizedContainerService.HintSize="545.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
       </Assign.To>
@@ -120,7 +136,7 @@
         <InArgument x:TypeArguments="x:Int32">1</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[int_pageCount&gt;1]" DisplayName="If- Pdf Page count &gt;1" sap:VirtualizedContainerService.HintSize="815,672" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[int_pageCount&gt;1]" DisplayName="If- Pdf Page count &gt;1" sap:VirtualizedContainerService.HintSize="545.6,859.2" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -128,16 +144,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[int_count&lt;=int_pageCount]" DisplayName="Extract all pages" sap:VirtualizedContainerService.HintSize="436,504" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+        <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[int_count&lt;=int_pageCount]" DisplayName="Extract all pages" sap:VirtualizedContainerService.HintSize="512,507.2" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
           <ui:InterruptibleDoWhile.Body>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,329" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,340" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_5" ImageDpi="150" OutputFileName="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString+&quot; - &quot;+int_count.ToString + &quot;.jpg&quot;]" PageNumber="[int_count]" />
-              <Assign DisplayName="Assign-i increment " sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="433.6,168.8" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_5" ImageDpi="150" OutputFileName="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yy mm&quot;)+&quot; - &quot;+int_count.ToString + &quot;.jpg&quot;]" PageNumber="[int_count]" />
+              <Assign DisplayName="Assign-i increment " sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_8">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[int_count]</OutArgument>
                 </Assign.To>
@@ -156,10 +172,10 @@
         </ui:InterruptibleDoWhile>
       </If.Then>
       <If.Else>
-        <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_6" ImageDpi="150" OutputFileName="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;.jpg&quot;]" PageNumber="1" />
+        <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[io_dict_Config(&quot;originalFilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="321.6,136.8" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_6" ImageDpi="150" OutputFileName="[io_dict_Config(&quot;outputFolderPath&quot;).ToString + &quot;\&quot; + io_dict_Config(&quot;newFilename&quot;).ToString + &quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yy mm&quot;) + &quot;.jpg&quot;]" PageNumber="1" />
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="815,70" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="545.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
       </Assign.To>
